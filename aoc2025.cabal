@@ -22,7 +22,7 @@ executable aoc2025
 
   -- Modules included in this executable, other than Main.
   other-modules:
-    Paths_aoc2023
+    Paths_aoc2025
     Day01
     Day02
     Day03
@@ -37,7 +37,7 @@ executable aoc2025
     Day12
 
   autogen-modules:
-    Paths_aoc2023
+    Paths_aoc2025
 
   build-depends:
       base ^>=4.17.2.0

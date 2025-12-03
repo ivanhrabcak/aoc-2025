@@ -1,5 +1,3 @@
--- {-# LANGUAGE QuasiQuotes #-}
-
 module Day02 where
 
 import Paths_aoc2025 (getDataFileName)

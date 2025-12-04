@@ -19,18 +19,18 @@ orderedMaximums = findCandidates
   where
     findCandidates 0 _ = []
     findCandidates _ [] = []
-    findCandidates k ys = tryCandidates k ys candidates
+    findCandidates n xs = tryCandidates n xs candidates
       where
-        candidates = sortBy (flip compare) (nub ys)
+        candidates = sortBy (flip compare) (nub xs)
 
     tryCandidates _ _ [] = []
-    tryCandidates k ys (m : ms) =
-      if length maximums == k
+    tryCandidates n xs (m : ms) =
+      if length maximums == n
         then maximums
-        else tryCandidates k ys ms
+        else tryCandidates n xs ms
       where
-        rest = drop 1 $ dropWhile (/= m) ys
-        maximums = m : findCandidates (k - 1) rest
+        rest = drop 1 $ dropWhile (/= m) xs
+        maximums = m : findCandidates (n - 1) rest
 
 sumOrderedMaximums :: Int -> [[Integer]] -> Integer
 sumOrderedMaximums n joltages = sum $ map (concatN . orderedMaximums n) joltages
